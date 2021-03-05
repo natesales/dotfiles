@@ -3,7 +3,7 @@
 # ZSH config
 export ZSH="/home/nate/.oh-my-zsh"
 ZSH_THEME="endo"
-plugins=(git)
+plugins=(git k)
 source $ZSH/oh-my-zsh.sh
 
 # Automatically update without prompting.

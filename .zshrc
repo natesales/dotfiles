@@ -32,13 +32,25 @@ eval "$(thefuck --alias)"
 
 # Aliases
 alias an="sudo apt install"
+alias au="sudo apt update"
+alias ag="sudo apt upgrade"
 alias nv="nvim"
 alias f="fuck"
 alias gplme="cp ~/Projects/licenses/gplv3.txt ./LICENSE"
 alias hr="printf '─%.0s' {1..$(tput cols)}"
 deltag() { git tag -d $1 && git push --delete origin $1 }
-alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
 alias xt="sleep 2 && xdotool type"
+alias bfg="java -jar /home/nate/apps/bfg-1.14.0.jar"
+alias clip="xclip -selection clipboard"
+dockerclean() {
+	docker kill $(docker ps -aq)
+	docker rm $(docker ps -aq)
+	docker image rm $(docker image ls -aq)
+}
+sshedit() {
+    nv ~/.ssh/configs/"$1".conf
+    cat ~/.ssh/configs/*.conf > ~/.ssh/config
+}
 
 # GTK VTE Fix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
